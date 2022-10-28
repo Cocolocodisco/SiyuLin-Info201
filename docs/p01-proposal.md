@@ -1,4 +1,5 @@
 # Project Title: Wildfires in the US—Is it getting worse?!
+Code Name: AF07
 
 Authors: Luis Chan, Cynthia Chang, Charlotte Lin 
 
