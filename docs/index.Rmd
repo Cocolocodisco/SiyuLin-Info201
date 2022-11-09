@@ -5,6 +5,22 @@ date: "11/14/2022"
 output: html_document
 ---
 
+
+## Abstract
+This project aims to explore the causes of wildfires in the United States as well as the reasons of increased frequency. We find this topic important because the prevalence of wildfires has increased in the past few years in the Pacific Northwest and along the West Coast, and this increase affects the quality of life among those living in said areas, and could be detrimental to people who live with respiratory problems, like asthma.
+
+## Keywords
+wildfires, quality of life, aqi, climate change
+
+
+
+
+
+
+
+
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
