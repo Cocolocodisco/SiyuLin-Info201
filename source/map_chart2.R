@@ -1,5 +1,6 @@
 # this is the source code for a map detailing a sample of 50000 fires
 # that have happened in the United States from 1992-2015
+# general reference: https://remiller1450.github.io/s230s19/Intro_maps.html
 
 library(tidyverse)
 library(dplyr)
