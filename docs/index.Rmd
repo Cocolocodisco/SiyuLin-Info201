@@ -1,16 +1,48 @@
 ---
 title: "Wildfires in the US---Is it getting worse?!"
-author: "Luis Chan, Cynthia Chang, Huiying Shen, Charlotte Lin"
-date: "11/14/2022"
 output: html_document
 ---
+Code Name: AF07
 
+## Authors: 
+- Cynthia Chang (cchang17@uw.edu)
+- Luis Chan (ylc22@uw.edu)
+- Huiying Shen (hs243@uw.edu)
+- Charlotte Lin (siyul6@uw.edu)
+
+**Affiliation:** INFO-201: Technical Foundations of Informatics - The Information School - University of Washington 
+
+**Date:** Autumn 2022
 
 ## Abstract
-This project aims to explore the causes of wildfires in the United States as well as the reasons of increased frequency. We find this topic important because the prevalence of wildfires has increased in the past few years in the Pacific Northwest and along the West Coast, and this increase affects the quality of life among those living in said areas, and could be detrimental to people who live with respiratory problems, like asthma.
+This project aims to explore the causes of wildfires in the United States as well as the reasons of increased frequency. We find this topic important because the prevalence of wildfires has increased in the past few years in the Pacific Northwest and along the West Coast, as well as the Southern parts of the United States, and this increase affects the quality of life among those living in said areas, and could be detrimental to people who live with respiratory problems, like asthma.
 
 ## Keywords
 wildfires, quality of life, aqi, climate change
+
+## Introduction 
+
+
+## Datasets
+The first dataset we used was found on Kaggle, called *U.S. Wildfire data (plus other attributes)*, and it is subset from another dataset (called 1.88 Million Wildfires). This dataset combines 50,000 random fire samples and historical weather data at where the fire takes place, among other details. This dataset is important because it details fires from 1992-2015, which is a large span of time that can show trends of fire activity. 
+
+> *https://www.kaggle.com/datasets/capcloudcoder/us-wildfire-data-plus-other-attributes*
+
+The second dataset we found was from USAFacts, called Acres Burned in Wildfires. This data is important because it details how much land has been burned from the years 1983 to 2021, and it also reports how much land was burned by fires that were started by humans, or natural disasters, etc. 
+
+> *https://usafacts.org/data/topics/security-safety/fire-and-disaster/fires-and-firefighters/forest-fire-acres/*
+
+The third dataset is also from Kaggle, and it consists of daily temperature data from major cities around the world, from 1995-2020. Prior to using this  dataset, we shaved down the dataset to just cities in the United States. This dataset is important in regards to our research questions because we suspect that issue of global warming has a positive correlation to the increased frequency of wildfires, and by using this dataset, we hope to detect trends between increased average daily t emperature and increased frequency of wildfires.
+
+> *https://www.kaggle.com/datasets/sudalairajkumar/daily-temperature-of-major-cities*
+
+
+## Research Questions: 
+1. How have wildfires been different in the past vs now? 
+
+2. When in the year are fires more prevalent and what are the most common causes of fire (natural vs manmade)?
+
+3. Why has it become a more prevalent problem now when it wasn't in the past?
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -25,36 +57,10 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Chart 2: Density Map of fires in the Mainland United States
 ```{r, echo = FALSE}
 source("../source/map_chart2.R")
-chart2 <- fire_but_shades
+chart2 <- fire_but_better_shades
 chart2
 ```
+## References
 
-
-
-### Example 2: Initialize a variable and then use it
-```{r}
-# Example 1: This function was "sourced" above
-
-```
-
-
-
-## ABOUT THIS FILE: 
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+[1] California wildfires wiped out nearly 20 years of greenhouse gas emission reductions â in 2020, alone
+https://www.usatoday.com/story/news/nation/2022/10/18/california-wildfires-2020-greenhouse-gas-emissions/10524398002/

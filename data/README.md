@@ -5,8 +5,9 @@ In our project, we use the following data files and Application Programming Inte
 ## Data files (TODO: Update/delete for your PROJECT)
 |Data File Name | Brief Description|
 |---------------| -----------------|
-|[example.cvs](./example.csv) | This file contains temperature data. (See report for details.)
-|[another-file](./filename2.csv) | Description ... 
+|[FW_Veg_Rem_Combined.csv](./FW_Veg_Rem_Combined.csv) | This file contains a 50,000 sample size of fire data from 1992-2015. (See report for details.)
+|[acres_burned_in_wildfires_usafacts.csv](./acres_burned_in_wildfires_usafacts.csv) | This fire contains information about acres burned in wildfires from 1983-2021, as well as the acres burned for different initial causes of wildfires in that year.
+|[united_states.csv](./united_states.csv) | This file is a subset of a bigger dataset (see report for details) that reports the average daily temperature of major cities in the United States from 1995-2020.
 
 ## Application Programming Interfaces (API) (TODO: Update/delete for your PROJECT)
 
