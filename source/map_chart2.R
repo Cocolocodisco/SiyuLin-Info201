@@ -7,7 +7,7 @@ library(dplyr)
 library(ggplot2)
 library(maps)
 
-fire_data <- read.csv("info201/project-group-7-section-af/data/FW_Veg_Rem_Combined.csv")
+fire_data <- read.csv("../data/FW_Veg_Rem_Combined.csv")
 
 # CHOICE 1: PLOTTING EVERY FIRE ON THE UNITED STATES MAP (vetoed for now)
 # this variable filters the .csv file into just state, latitude, and longitude
@@ -37,8 +37,9 @@ map <- ggplot() +
 # this variable selects only the state and the discovery date of the fire,
 # and adds a column that reports the year the fire was discovered.
 # reference: https://stackoverflow.com/questions/36568070/extract-year-from-date
-location_density <- fire_data %>% select(state, disc_clean_date)%>%
-  mutate(disc_clean_date, year = format(as.Date(location_density$disc_clean_date, 
+placeholder_location_density <-fire_data %>% select(state, disc_clean_date)
+location_density <- fire_data %>% select(state, disc_clean_date) %>% 
+  mutate(disc_clean_date, year = format(as.Date(placeholder_location_density$disc_clean_date, 
                                                 format="%m/%d/%Y"),"%Y"))
 
 
@@ -46,6 +47,8 @@ location_density <- fire_data %>% select(state, disc_clean_date)%>%
 # this counts the number of fires that each state has had
 count_state <- location_density %>%
   count(state)
+
+max(count_state$n)
 # this counts the number of fires that each state has had per year
 count_by_year <- location_density %>%
   group_by(year) %>%
@@ -63,3 +66,9 @@ data_merge <- inner_join(us_map, new_count_state, by = "region")
 fire_but_shades <- map + 
   geom_polygon(data = data_merge, aes(x=long, y=lat, group=group, fill = n),
              color = "white", size = 0.1)
+
+fire_but_better_shades <- fire_but_shades + scale_fill_continuous(name = "fire count",
+                          low = "pink", high = "orange", limits = c(0,max(count_state$n)), 
+                          breaks = c(1000, 2000, 3000, 4000, 5000, 6000, 7000), na.value = "grey50") + 
+                          labs(title = "Fire Density Map in Mainland United States from 1992 - 2015", 
+                               x = "longitude", y = "latitude")
