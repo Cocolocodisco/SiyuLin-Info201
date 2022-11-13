@@ -60,9 +60,10 @@ source("../source/map_chart2.R")
 chart2 <- fire_but_better_shades
 chart2
 ```
+
 ## Chart 3: Scatterplot Matrix of the Average Yearly Temperature in the United States
 ```{r}
-source("../source/Chart 3.R")
+#("../source/Chart 3.R")
 
 ```
 
