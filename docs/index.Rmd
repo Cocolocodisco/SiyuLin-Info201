@@ -73,8 +73,9 @@ chart2
 ## Chart 3: Scatterplot Matrix of the Average Yearly Temperature in the United States
 
 ```{r}
-#("../source/Chart 3.R")
-
+source("../source/Chart 3.R")
+chart3 <- Matrix
+chart3
 ```
 
 ## References
