@@ -62,6 +62,12 @@ knitr::opts_chunk$set(echo = FALSE)
 
 -   Please see Canvas for more details.
 
+##Table for Aggregated data
+```{r, echo = FALSE}
+source("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/AggregateTable.R")
+AggregateDataTable
+```
+
 ## Chart 2: Density Map of fires in the Mainland United States
 
 ```{r, echo = FALSE}
