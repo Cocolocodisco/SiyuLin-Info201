@@ -5,9 +5,8 @@ these sub-directories (TODO: Update/Delete)
 
 |Source Directories | Brief Description|
 |---------------| -----------------|
-|[xxx](./xxx) | Description ... 
-|[xxx](./xxx) | Description ... 
-
+|[chart2_map](./chart2_map) | This is the source code for a density map of the United States that depicts the number of wildfires in each state from 1992-2015 (in a random sample of 50,000).
+|[Chart 3](./Chart 3.R) | This is the source code for a scatterplot matrix of the average yearly temperature of every state in the United States, as well as additional territories. 
 
 # DEVELOPER NOTE 1: About ... 
 * All source code for your projects should go in the `/source` directory
