@@ -5,34 +5,9 @@
 library(tidyverse)
 library(dplyr)
 library(ggplot2)
-library(maps)
+library(usmap)
 
 fire_data <- read.csv("../data/FW_Veg_Rem_Combined.csv")
-
-# CHOICE 1: PLOTTING EVERY FIRE ON THE UNITED STATES MAP (vetoed for now)
-# this variable filters the .csv file into just state, latitude, and longitude
-# location_coordinates <- fire_data %>% select(state, latitude, longitude)
-
-# this variable adds a column to the location_coordinates that reports the state 
-# (not just abbreviations), which can be used for the join functions
-# new_fire_data <- mutate(location_coordinates, 
-#                         region = tolower(state.name[match(state, state.abb)]))
-
-# basic us map reference
-us_map <- map_data("state")
-
-# plots out the basic us map
-map <- ggplot() + 
-  geom_polygon(data = us_map, aes(x=long, y=lat, group=group),
-               color="black", fill="lightblue" )
-
-# this plots out all the fire coordinates
-# fire_but_dots <- map + 
-#   geom_point(data = location_coordinates, aes(x=longitude, y=latitude), 
-#              color = "gold", size = 0.1)
-
-
-# CHOICE 2: PLOTTING THE AMOUNT OF FIRES IN EACH STATE (IN A DENSITY TYPE MAP)
 
 # this variable selects only the state and the discovery date of the fire,
 # and adds a column that reports the year the fire was discovered.
@@ -56,16 +31,24 @@ count_by_year <- location_density %>%
 
 # this adds a new column that has the entire state name (instead of just abbreviations)
 new_count_state <- count_state %>%
-  mutate(region = tolower(state.name[match(state, state.abb)]))
+  mutate(full = state.name[match(state, state.abb)])
+
+# basic us map reference
+us_map <- us_map("state")
+
+# plots out the basic us map (dot map is for fire coordinates)
+map <- ggplot() + 
+  geom_polygon(data = us_map, aes(x=x, y=y, group=group),
+               color="black", fill="lightblue" )
 
 # merges the count data into the map data (so that it can be plotted)
-data_merge <- inner_join(us_map, new_count_state, by = "region")
+data_merge <- inner_join(us_map, new_count_state, by = "full")
 
 # this plots out the map of the US, with different states shaded differently
 # depending on the number of fires they have experienced from 1992-2015
 fire_but_shades <- map + 
-  geom_polygon(data = data_merge, aes(x=long, y=lat, group=group, fill = n),
-             color = "white", size = 0.1)
+  geom_polygon(data = data_merge, aes(x=x, y=y, group=group, fill = n),
+             color = "white", linewidth = 0.2)
 
 fire_but_better_shades <- fire_but_shades + scale_fill_continuous(name = "fire count",
                           low = "pink", high = "orange", limits = c(0,max(count_state$n)), 

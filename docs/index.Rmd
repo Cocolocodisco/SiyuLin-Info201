@@ -60,6 +60,14 @@ source("../source/map_chart2.R")
 chart2 <- fire_but_better_shades
 chart2
 ```
+## Chart 3: Scatterplot Matrix of the Average Yearly Temperature in the United States
+```{r}
+source("../source/Chart 3.R")
+
+```
+
+
+
 ## References
 
 [1] California wildfires wiped out nearly 20 years of greenhouse gas emission reductions â in 2020, alone
