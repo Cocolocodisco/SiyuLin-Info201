@@ -61,7 +61,13 @@ knitr::opts_chunk$set(echo = FALSE)
 source("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/AggregateTable.R")
 AggregateDataTable
 ```
-
+## Chart 1: Stacked Bar Chart of burned acres of lightning and human causes fire
+```{r}
+source("../source/Chart 2.R")
+chart1 <- Lightning_and_Human
+chart1
+```
+This chart shows the number of acres burned by lightning and human-caused fires.
 ## Chart 2: Density Map of fires in the Mainland United States
 
 ```{r, echo = FALSE}
@@ -79,6 +85,7 @@ chart3 <- Matrix
 chart3
 ```
 
+This chart shows the average temperature for each state across the United States.
 ## References
 
 [1] California wildfires wiped out nearly 20 years of greenhouse gas emission reductions â in 2020, alone <https://www.usatoday.com/story/news/nation/2022/10/18/california-wildfires-2020-greenhouse-gas-emissions/10524398002/>
