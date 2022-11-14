@@ -13,7 +13,7 @@ avg_temp <- united_states %>%
   summarise(avg_temp = mean(AvgTemperature)) %>%
   ungroup()
 # make the Scatter plot Matrix
-Matrix <- ggplot(avg_temp, aes(x = Year, y = avg_temp, color = State)) +
+Matrix <- ggplot(avg_temp, aes(x = Year, y = avg_temp)) +
   geom_point() +
   facet_wrap(~State, scales = "free") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 6),
