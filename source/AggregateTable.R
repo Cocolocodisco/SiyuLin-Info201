@@ -6,16 +6,11 @@ library(data.table,warn.conflicts = FALSE)
 
 wildfire <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/data/FW_Veg_Rem_Combined.csv")
 
-aggregate_table <- data.table(wildfire)
-
-aggregate_table <- aggregate_table %>%
+aggregate_table_2 <- data.table(wildfire) %>%
   select(disc_clean_date, state, stat_cause_descr, fire_mag, Temp_pre_30, Prec_pre_15) %>%
   filter(disc_clean_date == "1/1/1992" | disc_clean_date == "1/1/1995" | disc_clean_date == "1/1/1998" | disc_clean_date == "1/1/2001" | disc_clean_date == "1/1/2004" | disc_clean_date == "1/1/2007" | disc_clean_date == "1/1/2010" | disc_clean_date == "1/1/2013" | disc_clean_date == "9/9/2015")
 
-  
 
-
-aggregate_table_2 <- data.table(wildfire)
 
 MeanTemp <- aggregate_table_2 %>%
   group_by(Temp_pre_30) %>%
