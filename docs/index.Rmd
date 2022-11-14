@@ -56,13 +56,7 @@ The third dataset is also from Kaggle, and it consists of daily temperature data
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## What is this file for?
-
--   This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
--   Please see Canvas for more details.
-
-##Table for Aggregated data
+## Table for Aggregated data
 ```{r, echo = FALSE}
 source("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/AggregateTable.R")
 AggregateDataTable
@@ -88,3 +82,7 @@ chart3
 ## References
 
 [1] California wildfires wiped out nearly 20 years of greenhouse gas emission reductions â in 2020, alone <https://www.usatoday.com/story/news/nation/2022/10/18/california-wildfires-2020-greenhouse-gas-emissions/10524398002/>
+[2] Why are wildfires getting worse? These scientists explain <https://www.weforum.org/agenda/2021/08/wildfires-united-states-cause-science>
+[3] Are wildfires increasing or decreasing? <https://www.iqair.com/us/newsroom/wildfires-increasing-or-decreasing>
+
+
