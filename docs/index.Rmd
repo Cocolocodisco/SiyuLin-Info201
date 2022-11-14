@@ -46,28 +46,28 @@ The third dataset is also from Kaggle, and it consists of daily temperature data
 
 ## Research Questions:
 
-1.  How have wildfires been different in the past vs now?
+1.  Why has wildfires become a more prevalent problem now when it wasn't in the past?
 
 2.  When in the year are fires more prevalent and what are the most common causes of fire (natural vs manmade)?
 
-3.  Why has it become a more prevalent problem now when it wasn't in the past?
+3.  Is the prevalence of fires correlated with global warming, specifically the increase in the rise of average temperatures?
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## What is this file for?
-
--   This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
--   Please see Canvas for more details.
-
-##Table for Aggregated data
+## Table for Aggregated data
 ```{r, echo = FALSE}
 source("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/AggregateTable.R")
 AggregateDataTable
 ```
-
+## Chart 1: Stacked Bar Chart of burned acres of lightning and human causes fire
+```{r}
+source("../source/Chart 1.R")
+chart1 <- Lightning_and_Human
+chart1
+```
+This chart shows the number of acres burned by lightning and human-caused fires.
 ## Chart 2: Density Map of fires in the Mainland United States
 
 ```{r, echo = FALSE}
@@ -75,6 +75,7 @@ source("../source/map_chart2.R")
 chart2 <- fire_but_better_shades
 chart2
 ```
+This density map of the United States depicts the number of fires that have happened in each state (in a random sample of 50,000 data observations) from 1992 to 2015. As we can see, Texas has suffered through the most wildfires in these past years, many of the Southern states and California are also more prone to wildfires than their northern companions. It could be because the Southern states typically have higher average temperatures, which make it easier for wildfires to start. This chart is important because it gives an insight on which states are more prone to wildfires, and also makes it all the more concerning when states like Washington suffer through intense wildfires: it makes us realize that global warming may be becoming more of a concern.
 
 ## Chart 3: Scatterplot Matrix of the Average Yearly Temperature in the United States
 
@@ -84,6 +85,11 @@ chart3 <- Matrix
 chart3
 ```
 
+This chart shows the average temperature for each state across the United States.
 ## References
 
 [1] California wildfires wiped out nearly 20 years of greenhouse gas emission reductions â in 2020, alone <https://www.usatoday.com/story/news/nation/2022/10/18/california-wildfires-2020-greenhouse-gas-emissions/10524398002/>
+[2] Why are wildfires getting worse? These scientists explain <https://www.weforum.org/agenda/2021/08/wildfires-united-states-cause-science>
+[3] Are wildfires increasing or decreasing? <https://www.iqair.com/us/newsroom/wildfires-increasing-or-decreasing>
+
+

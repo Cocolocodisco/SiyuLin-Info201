@@ -47,11 +47,11 @@ data_merge <- inner_join(us_map, new_count_state, by = "full")
 # this plots out the map of the US, with different states shaded differently
 # depending on the number of fires they have experienced from 1992-2015
 fire_but_shades <- map + 
-  geom_polygon(data = data_merge, aes(x=x, y=y, group=group, fill = n),
-             color = "white", linewidth = 0.2)
+  geom_polygon(data = data_merge, aes(x = x, y = y, group=group, fill = n),
+             color = "white", linewidth = 0.5)
 
 fire_but_better_shades <- fire_but_shades + scale_fill_continuous(name = "fire count",
                           low = "pink", high = "orange", limits = c(0,max(count_state$n)), 
                           breaks = c(1000, 2000, 3000, 4000, 5000, 6000, 7000), na.value = "grey50") + 
-                          labs(title = "Fire Density Map in Mainland United States from 1992 - 2015", 
-                               x = "longitude", y = "latitude")
+                          labs(title = "Fire Density Map in Mainland United States from 1992 - 2015",
+                               x = "", y = "")
