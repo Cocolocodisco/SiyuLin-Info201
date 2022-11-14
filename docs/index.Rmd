@@ -63,7 +63,7 @@ AggregateDataTable
 ```
 ## Chart 1: Stacked Bar Chart of burned acres of lightning and human causes fire
 ```{r}
-source("../source/Chart 2.R")
+source("../source/Chart 1.R")
 chart1 <- Lightning_and_Human
 chart1
 ```
