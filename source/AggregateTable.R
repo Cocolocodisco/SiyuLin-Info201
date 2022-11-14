@@ -36,6 +36,6 @@ MeanMagnitude <- aggregate_table_2 %>%
 AggData <- merge(MeanTemp, MeanPrec)
 AggregateDataTable <- merge(AggData, MeanMagnitude) 
 
-knitr::kable(AggregateDataTable, "simple", col.names = c("Cause","Temperature","Precipitation","Fire Maginitude"))
+AggregateDataTable2 <- knitr::kable(AggregateDataTable, "simple", col.names = c("Cause","Temperature","Precipitation","Fire Maginitude"))
 
             
