@@ -59,7 +59,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Table for Aggregated data
 ```{r, echo = FALSE}
 source("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/AggregateTable.R")
-AggregateDataTable
+AggregateDataTable2
 ```
 ## Chart 1: Stacked Bar Chart of burned acres of lightning and human causes fire
 ```{r}
