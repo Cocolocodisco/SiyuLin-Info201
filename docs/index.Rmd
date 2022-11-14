@@ -46,11 +46,11 @@ The third dataset is also from Kaggle, and it consists of daily temperature data
 
 ## Research Questions:
 
-1.  How have wildfires been different in the past vs now?
+1.  Why has wildfires become a more prevalent problem now when it wasn't in the past?
 
 2.  When in the year are fires more prevalent and what are the most common causes of fire (natural vs manmade)?
 
-3.  Why has it become a more prevalent problem now when it wasn't in the past?
+3.  Is the prevalence of fires correlated with global warming, specifically the increase in the rise of average temperatures?
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
