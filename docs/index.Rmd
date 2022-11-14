@@ -54,20 +54,29 @@ The third dataset is also from Kaggle, and it consists of daily temperature data
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+source("../source/dynamic_paragraph_values.R")
 ```
 
+## Dynamic Paragraph
+One of our research questions asked about the most common causes of wildfire (and whether it is due to natural causes, like lightning, or manmade, like campfires gone rogue), and after analyzing the data, we have discovered that the number one cause for wildfires discovered between 1992-2015 is **`r most_common_cause`**. We were also curious about when in the year fires were most prevalent, and while most of us expected that it would be sometime during summer, wildfires are surprisingly most commonly discovered in **`r most_discovery_month`**, or March. The state that has had the most number of fires in this time frame is **`r most_common_state`**, more commonly known as Texas. We also wanted to know if the increased frequency of fires is correlated with global warming, and through another dataset, we were able to calculate the average temperatures for every state. Surprisingly, the state with the highest temperature belongs to **`r highest_average_temperature`**, while Texas, the state that we originally expected to have the highest average temperature averaged at around **`r where_is_texas`**.
+
 ## Table for Aggregated data
+
 ```{r, echo = FALSE}
 source("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/AggregateTable.R")
 knitr::kable(AggregateDataTable, "simple", col.names =c("Cause","Temperature","Precipitation","Fire Maginitude"))
 ```
+
 ## Chart 1: Stacked Bar Chart of burned acres of lightning and human causes fire
+
 ```{r}
 source("../source/Chart 1.R")
 chart1 <- Lightning_and_Human
 chart1
 ```
 This chart shows the number of acres burned by lightning and human-caused fires.
+
+
 ## Chart 2: Density Map of fires in the Mainland United States
 
 ```{r, echo = FALSE}
@@ -86,10 +95,13 @@ chart3
 ```
 
 This chart shows the average temperature for each state across the United States.
+
 ## References
 
 [1] California wildfires wiped out nearly 20 years of greenhouse gas emission reductions â in 2020, alone <https://www.usatoday.com/story/news/nation/2022/10/18/california-wildfires-2020-greenhouse-gas-emissions/10524398002/>
-[2] Why are wildfires getting worse? These scientists explain <https://www.weforum.org/agenda/2021/08/wildfires-united-states-cause-science>
+
+ Why are wildfires getting worse? These scientists explain <https://www.weforum.org/agenda/2021/08/wildfires-united-states-cause-science>
+
 [3] Are wildfires increasing or decreasing? <https://www.iqair.com/us/newsroom/wildfires-increasing-or-decreasing>
 
 
