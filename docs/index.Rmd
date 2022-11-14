@@ -75,6 +75,7 @@ source("../source/map_chart2.R")
 chart2 <- fire_but_better_shades
 chart2
 ```
+This density map of the United States depicts the number of fires that have happened in each state (in a random sample of 50,000 data observations) from 1992 to 2015. As we can see, Texas has suffered through the most wildfires in these past years, many of the Southern states and California are also more prone to wildfires than their northern companions. It could be because the Southern states typically have higher average temperatures, which make it easier for wildfires to start. This chart is important because it gives an insight on which states are more prone to wildfires, and also makes it all the more concerning when states like Washington suffer through intense wildfires: it makes us realize that global warming may be becoming more of a concern.
 
 ## Chart 3: Scatterplot Matrix of the Average Yearly Temperature in the United States
 
