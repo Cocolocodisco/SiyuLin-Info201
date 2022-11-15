@@ -10,7 +10,7 @@ library(tidyverse)
 FW_Veg_Rem_Combined <- read_csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/data/FW_Veg_Rem_Combined.csv")
 
 # Create a bar chart show the top 10 causes of fire in US
-FW_Veg_Rem_Combined %>% 
+Causes <- FW_Veg_Rem_Combined %>% 
   count(stat_cause_descr) %>% 
   arrange(desc(n)) %>% 
   head(10) %>% 
