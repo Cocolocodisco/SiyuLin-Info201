@@ -67,14 +67,14 @@ source("https://raw.githubusercontent.com/info201a-au2022/project-group-7-sectio
 knitr::kable(AggregateDataTable, "simple", col.names =c("Cause","Temperature","Precipitation","Fire Maginitude"))
 ```
 
-## Chart 1: Stacked Bar Chart of burned acres of lightning and human causes fire
+## Chart 1: Top 10 Causes of Wildfire (1992-2015): Bar Chart
 
 ```{r}
 source("../source/Chart 1.R")
 chart1 <- Causes
 chart1
 ```
-Use a bar chart to display and sort the top 10 fire causes in the United States. From the data we can see that Debris Burning is the most common cause of fires. Debris Burning refers to any spread of fire initially ignited to clear land or burn trash, garbage, crop residue or grass (excluding burning fires). Therefore, debris burning requires futher control, and safety measures. This chart allows people to more clearly understand the causes of fires, and to carry out targeted management and prevention.
+We used a bar chart to display and sort the top 10 fire causes in the United States. From the data we can see that Debris Burning is the most common cause of fires. Debris Burning refers to any spread of fire initially ignited to clear land or burn trash, garbage, crop residue or grass (excluding burning fires). Therefore, debris burning requires further control, and safety measures. This chart allows people to more clearly understand the causes of fires, and to carry out targeted management and prevention.
 
 
 ## Chart 2: Density Map of fires in the Mainland United States
@@ -86,7 +86,7 @@ chart2
 ```
 This density map of the United States depicts the number of fires that have happened in each state (in a random sample of 50,000 data observations) from 1992 to 2015. As we can see, Texas has suffered through the most wildfires in these past years, many of the Southern states and California are also more prone to wildfires than their northern companions. It could be because the Southern states typically have higher average temperatures, which make it easier for wildfires to start. This chart is important because it gives an insight on which states are more prone to wildfires, and also makes it all the more concerning when states like Washington suffer through intense wildfires: it makes us realize that global warming may be becoming more of a concern.
 
-## Chart 3: Scatterplot Matrix of the Average Yearly Temperature in the United States
+## Chart 3: Scatterplot Matrix of the Average Yearly Temperature in the United States, grouped by region
 
 ```{r}
 source("../source/Chart 3.R")
@@ -98,9 +98,9 @@ This chart shows the average temperature for each region of the United States, d
 
 ## References
 
-[1] California wildfires wiped out nearly 20 years of greenhouse gas emission reductions â in 2020, alone <https://www.usatoday.com/story/news/nation/2022/10/18/california-wildfires-2020-greenhouse-gas-emissions/10524398002/>
+[1] California wildfires wiped out nearly 20 years of greenhouse gas emission reductions in 2020, alone <https://www.usatoday.com/story/news/nation/2022/10/18/california-wildfires-2020-greenhouse-gas-emissions/10524398002/>
 
- Why are wildfires getting worse? These scientists explain <https://www.weforum.org/agenda/2021/08/wildfires-united-states-cause-science>
+[2] Why are wildfires getting worse? These scientists explain <https://www.weforum.org/agenda/2021/08/wildfires-united-states-cause-science>
 
 [3] Are wildfires increasing or decreasing? <https://www.iqair.com/us/newsroom/wildfires-increasing-or-decreasing>
 
