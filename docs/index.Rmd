@@ -74,7 +74,7 @@ source("../source/Chart 1.R")
 chart1 <- Causes
 chart1
 ```
-Use a bar chart to display and sort the top 10 fire causes in the United States. From the data we can see that Debris Burning is the most common cause of fires. Debris Burning refers to any spread of fire initially ignited to clear land or burn trash, garbage, crop residue or grass (excluding burning fires). Therefore, debris burning requires futher control, and safety measures.
+Use a bar chart to display and sort the top 10 fire causes in the United States. From the data we can see that Debris Burning is the most common cause of fires. Debris Burning refers to any spread of fire initially ignited to clear land or burn trash, garbage, crop residue or grass (excluding burning fires). Therefore, debris burning requires futher control, and safety measures. This chart allows people to more clearly understand the causes of fires, and to carry out targeted management and prevention.
 
 
 ## Chart 2: Density Map of fires in the Mainland United States
@@ -94,7 +94,7 @@ chart3 <- Matrix
 chart3
 ```
 
-This chart shows the average temperature for each state across the United States.
+This chart shows the average temperature for each region of the United States, divided into four location regions. From the Scatter Plot Matrix, it can be seen that the temperature in all regions of the United States is rising in a slow trend, which may be due to global warming. This chart can give users clearer and more intuitive information to have an understanding of the temperature in the United States, which is very important. Although we cannot directly feel global warming through our own feelings, we can analyze it through data.
 
 ## References
 
