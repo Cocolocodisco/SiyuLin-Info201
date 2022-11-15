@@ -71,10 +71,10 @@ knitr::kable(AggregateDataTable, "simple", col.names =c("Cause","Temperature","P
 
 ```{r}
 source("../source/Chart 1.R")
-chart1 <- Lightning_and_Human
+chart1 <- Causes
 chart1
 ```
-This chart shows the number of acres burned by lightning and human-caused fires.
+Use a bar chart to display and sort the top 10 fire causes in the United States. From the data we can see that Debris Burning is the most common cause of fires. Debris Burning refers to any spread of fire initially ignited to clear land or burn trash, garbage, crop residue or grass (excluding burning fires). Therefore, debris burning requires futher control, and safety measures.
 
 
 ## Chart 2: Density Map of fires in the Mainland United States
