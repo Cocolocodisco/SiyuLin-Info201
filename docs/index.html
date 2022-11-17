@@ -471,25 +471,173 @@ temperature averaged at around <strong>66.2116366</strong>.</p>
 </div>
 <div id="table-for-aggregated-data" class="section level2">
 <h2>Table for Aggregated data</h2>
-<pre><code>##     stat_cause_descr Temp_pre_30 Prec_pre_15 fire_mag
-## 1              Arson  -7.6533521       9.750    0.100
-## 2           Campfire  -1.0000000      -1.000    0.100
-## 3           Children   0.4870907       0.475    0.100
-## 4     Debris Burning   5.7839338       3.540    0.100
-## 5      Equipment Use  19.6739468      18.600    3.000
-## 6          Lightning  12.3302326      -0.500    0.100
-## 7      Miscellaneous  12.5667204      29.700    0.825
-## 8  Missing/Undefined  -1.0000000      -1.000   25.300
-## 9           Railroad  -1.0000000      -1.000    0.100
-## 10           Smoking   6.9616947      18.950    0.100</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">test</th>
+<th align="left">max_state</th>
+<th align="left">max_stat_cause_descr</th>
+<th align="left">max_discovery_month</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1992</td>
+<td align="left">MS</td>
+<td align="left">Debris Burning</td>
+<td align="left">Mar</td>
+</tr>
+<tr class="even">
+<td align="right">1993</td>
+<td align="left">GA</td>
+<td align="left">Debris Burning</td>
+<td align="left">Apr</td>
+</tr>
+<tr class="odd">
+<td align="right">1994</td>
+<td align="left">GA</td>
+<td align="left">Debris Burning</td>
+<td align="left">Mar</td>
+</tr>
+<tr class="even">
+<td align="right">1995</td>
+<td align="left">MS</td>
+<td align="left">Debris Burning</td>
+<td align="left">Mar</td>
+</tr>
+<tr class="odd">
+<td align="right">1996</td>
+<td align="left">GA</td>
+<td align="left">Debris Burning</td>
+<td align="left">Feb</td>
+</tr>
+<tr class="even">
+<td align="right">1997</td>
+<td align="left">GA</td>
+<td align="left">Arson</td>
+<td align="left">Apr</td>
+</tr>
+<tr class="odd">
+<td align="right">1998</td>
+<td align="left">GA</td>
+<td align="left">Arson</td>
+<td align="left">Aug</td>
+</tr>
+<tr class="even">
+<td align="right">1999</td>
+<td align="left">GA</td>
+<td align="left">Debris Burning</td>
+<td align="left">Aug</td>
+</tr>
+<tr class="odd">
+<td align="right">2000</td>
+<td align="left">GA</td>
+<td align="left">Debris Burning</td>
+<td align="left">Aug</td>
+</tr>
+<tr class="even">
+<td align="right">2001</td>
+<td align="left">GA</td>
+<td align="left">Debris Burning</td>
+<td align="left">Apr</td>
+</tr>
+<tr class="odd">
+<td align="right">2002</td>
+<td align="left">GA</td>
+<td align="left">Debris Burning</td>
+<td align="left">Feb</td>
+</tr>
+<tr class="even">
+<td align="right">2003</td>
+<td align="left">CA</td>
+<td align="left">Debris Burning</td>
+<td align="left">Apr</td>
+</tr>
+<tr class="odd">
+<td align="right">2004</td>
+<td align="left">GA</td>
+<td align="left">Debris Burning</td>
+<td align="left">Mar</td>
+</tr>
+<tr class="even">
+<td align="right">2005</td>
+<td align="left">TX</td>
+<td align="left">Debris Burning</td>
+<td align="left">Apr</td>
+</tr>
+<tr class="odd">
+<td align="right">2006</td>
+<td align="left">TX</td>
+<td align="left">Debris Burning</td>
+<td align="left">Mar</td>
+</tr>
+<tr class="even">
+<td align="right">2007</td>
+<td align="left">GA</td>
+<td align="left">Debris Burning</td>
+<td align="left">Mar</td>
+</tr>
+<tr class="odd">
+<td align="right">2008</td>
+<td align="left">TX</td>
+<td align="left">Miscellaneous</td>
+<td align="left">Mar</td>
+</tr>
+<tr class="even">
+<td align="right">2009</td>
+<td align="left">TX</td>
+<td align="left">Debris Burning</td>
+<td align="left">Mar</td>
+</tr>
+<tr class="odd">
+<td align="right">2010</td>
+<td align="left">TX</td>
+<td align="left">Debris Burning</td>
+<td align="left">Apr</td>
+</tr>
+<tr class="even">
+<td align="right">2011</td>
+<td align="left">TX</td>
+<td align="left">Debris Burning</td>
+<td align="left">Aug</td>
+</tr>
+<tr class="odd">
+<td align="right">2012</td>
+<td align="left">TX</td>
+<td align="left">Debris Burning</td>
+<td align="left">Jul</td>
+</tr>
+<tr class="even">
+<td align="right">2013</td>
+<td align="left">TX</td>
+<td align="left">Debris Burning</td>
+<td align="left">Mar</td>
+</tr>
+<tr class="odd">
+<td align="right">2014</td>
+<td align="left">TX</td>
+<td align="left">Debris Burning</td>
+<td align="left">Apr</td>
+</tr>
+<tr class="even">
+<td align="right">2015</td>
+<td align="left">TX</td>
+<td align="left">Debris Burning</td>
+<td align="left">Jun</td>
+</tr>
+</tbody>
+</table>
 <p>We generated a table for the aggregated data for the first dataset,
 aiming to find out the most common states, months and causes for the
 wildfires happening in each year from 1992 to 2015. From the graph,
 there are four columns, namely the year, the reason that relates to most
 numbers of wildfires every year, the state with the most wildfires in
 every year, and the most repeated month every year for the occurrence of
-the wildfires. ## Chart 1: Top 10 Causes of Wildfire (1992-2015): Bar
-Chart</p>
+the wildfires. From the table, it can be seen that the most state with
+wildfires every year is Texas, while the main reason for the wildfires
+is debris burning and the major discovery months of the wildfire ranges
+from February to July each year.</p>
+<p>## Chart 1: Top 10 Causes of Wildfire (1992-2015): Bar Chart</p>
 <pre><code>## New names:
 ## Rows: 55367 Columns: 43
 ## ── Column specification

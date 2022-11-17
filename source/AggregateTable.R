@@ -6,8 +6,7 @@ library(data.table,warn.conflicts = FALSE)
 #reads the data file
 wildfire <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/data/FW_Veg_Rem_Combined.csv")
 aggregate_table <- wildfire %>%
-  mutate (disc_clean_date, year = format (as.Date (wildfire$disc_clean_date,
-                                                    format="%m/%d/%Y"), "%Y")) %>%
+  mutate(disc_clean_date, year = format(as.Date(wildfire$disc_clean_date,format="%m/%d/%Y"), "%Y")) %>%
   select(year, state, stat_cause_descr, discovery_month)
 test <- sort(as.numeric(unique (aggregate_table$year)))
 
@@ -39,3 +38,5 @@ max_stat_cause_descr<- aggregate_table %>%
 combine_tables <- data.frame(test, max_state, max_stat_cause_descr, max_discovery_month)
 print_aggregate_table <- knitr::kable(combine_tables, "simple",
                                       kol.names = c("Year","State", "Cause of Fire", "Month it was discovered"))
+
+#Reference Link: Sorting or Ordering Vectors https://stat.ethz.ch/R-manual/R-devel/library/base/html/sort.html
