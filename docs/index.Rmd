@@ -65,7 +65,11 @@ One of our research questions asked about the most common causes of wildfire (an
 
 ```{r, echo = FALSE}
 source("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/AggregateTable.R")
-AggregateDataTable
+library(kableExtra)
+kbl(print_aggregate_table)
+print_aggregate_table %>%
+  kbl() %>%
+  kable_material_dark()
 ```
 
 We generated a table for the aggregated data for the first dataset, aiming to find out the most common states, months and causes for the wildfires happening in each year from 1992 to 2015. From the graph, there are four columns, namely the year, the reason that relates to most numbers of wildfires every year, the state with the most wildfires in every year, and the most repeated month every year for the occurrence of the wildfires. \## Chart 1: Top 10 Causes of Wildfire (1992-2015): Bar Chart
