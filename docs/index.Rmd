@@ -18,7 +18,7 @@ Code Name: AF07
 
 ## Abstract
 
-This project aims to explore the *causes* of wildfires in the United States as well as the *reasons of increased frequency*. We find this topic important because the prevalence of wildfires has increased in the past few years in the *Pacific Northwest* and along the *West Coast*, as well as the Southern parts of the United States, and this increase affects the quality of life among those living in said areas, and could be detrimental to people who live with respiratory problems, like asthma.
+This project aims to explore the causes of wildfires in the United States as well as the reasons of increased frequency. We find this topic important because the prevalence of wildfires has increased in the past few years in the Pacific Northwest and along the West Coast, as well as the Southern parts of the United States, and this increase affects the quality of life among those living in said areas, and could be detrimental to people who live with respiratory problems, like asthma.
 
 ## Keywords
 
@@ -29,6 +29,10 @@ wildfires, quality of life, aqi, climate change
 Throughout the last decade, the problem of wildfires have been unprecedentedly increasing, to levels that we have never experienced before. While there are a number of underlying factors to why this issue has been prevalent across the United States, such as increasing temperatures, decreasing precipitation and human-made factors such as deforestation and urbanization, among all, the issue of global warming seems to be the major culprit behind this natural disaster. With increasing temperatures across the United States, the ecosystem is affected in different arrays such as a loss a vegetation and a decrease in water moisture in the soil. Dry weather due to global warming is also indispensably affiliated with the issue of wildfires.
 
 Thus, with the mindset of data scientists, our group aims to use the three datasets below, from wildfire data to datasets of the land burned and temperature changes. we aim to delve into the underlying causes and trends of wildfires, and ultimately, how to we alleviate the issue and increase the quality of life of different stakeholders.
+
+## The Problem Domain
+
+The rate of wildfires has increased rapidly these past few years, directly affecting the air quality which also harms quality of life for many Americans. This may be due to many underlying factors, like global warming, or the increase of manmade fires. On October 19th, 2022, Seattle had the worst air quality in the world, and some West Coast cities like Portland, OR and Vancouver, BC were also ranked as some of the worst cities regarding air quality that week. With this unprecedented situation, this is an issue that we find important to explore. By knowing the history of it and its trends, we would like to raise awareness of this issue, and with more skills and knowledge, we could predict future trends by analyzing the data.
 
 ## Datasets
 
@@ -65,12 +69,12 @@ One of our research questions asked about the most common causes of wildfire (an
 
 ```{r, echo = FALSE}
 source("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/AggregateTable.R")
-knitr::kable(combine_tables, "simple",kol.names = c("Year","State", "Cause of Fire", "Month it was discovered"))
+print_aggregate_table
 ```
 
 We generated a table for the aggregated data for the first dataset, aiming to find out the most common states, months and causes for the wildfires happening in each year from 1992 to 2015. From the graph, there are four columns, namely the year, the reason that relates to most numbers of wildfires every year, the state with the most wildfires in every year, and the most repeated month every year for the occurrence of the wildfires. From the table, it can be seen that the most state with wildfires every year is Texas, while the main reason for the wildfires is debris burning and the major discovery months of the wildfire ranges from February to July each year.
 
-\## Chart 1: Top 10 Causes of Wildfire (1992-2015): Bar Chart
+## Chart 1: Top 10 Causes of Wildfire (1992-2015): Bar Chart
 
 ```{r}
 source("../source/Chart 1.R")
