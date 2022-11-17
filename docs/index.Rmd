@@ -18,7 +18,7 @@ Code Name: AF07
 
 ## Abstract
 
-This project aims to explore the causes of wildfires in the United States as well as the reasons of increased frequency. We find this topic important because the prevalence of wildfires has increased in the past few years in the Pacific Northwest and along the West Coast, as well as the Southern parts of the United States, and this increase affects the quality of life among those living in said areas, and could be detrimental to people who live with respiratory problems, like asthma.
+This project aims to explore the *causes* of wildfires in the United States as well as the *reasons of increased frequency*. We find this topic important because the prevalence of wildfires has increased in the past few years in the *Pacific Northwest* and along the *West Coast*, as well as the Southern parts of the United States, and this increase affects the quality of life among those living in said areas, and could be detrimental to people who live with respiratory problems, like asthma.
 
 ## Keywords
 
@@ -58,24 +58,25 @@ source("../source/dynamic_paragraph_values.R")
 ```
 
 ## Dynamic Paragraph
+
 One of our research questions asked about the most common causes of wildfire (and whether it is due to natural causes, like lightning, or manmade, like campfires gone rogue), and after analyzing the data, we have discovered that the number one cause for wildfires discovered between 1992-2015 is **`r most_common_cause`**. We were also curious about when in the year fires were most prevalent, and while most of us expected that it would be sometime during summer, wildfires are surprisingly most commonly discovered in **`r most_discovery_month`**, or March. The state that has had the most number of fires in this time frame is **`r most_common_state`**, more commonly known as Texas. We also wanted to know if the increased frequency of fires is correlated with global warming, and through another dataset, we were able to calculate the average temperatures for every state. Surprisingly, the state with the highest temperature belongs to **`r highest_average_temperature`**, while Texas, the state that we originally expected to have the highest average temperature averaged at around **`r where_is_texas`**.
 
 ## Table for Aggregated data
 
 ```{r, echo = FALSE}
 source("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/AggregateTable.R")
-knitr::kable(AggregateDataTable, "simple", col.names =c("Cause","Temperature","Precipitation","Fire Maginitude"))
+AggregateDataTable
 ```
 
-## Chart 1: Top 10 Causes of Wildfire (1992-2015): Bar Chart
+We generated a table for the aggregated data for the first dataset, aiming to find out the most common states, months and causes for the wildfires happening in each year from 1992 to 2015. From the graph, there are four columns, namely the year, the reason that relates to most numbers of wildfires every year, the state with the most wildfires in every year, and the most repeated month every year for the occurrence of the wildfires. \## Chart 1: Top 10 Causes of Wildfire (1992-2015): Bar Chart
 
 ```{r}
 source("../source/Chart 1.R")
 chart1 <- Causes
 chart1
 ```
-We used a bar chart to display and sort the top 10 fire causes in the United States. From the data we can see that Debris Burning is the most common cause of fires. Debris Burning refers to any spread of fire initially ignited to clear land or burn trash, garbage, crop residue or grass (excluding burning fires). Therefore, debris burning requires further control, and safety measures. This chart allows people to more clearly understand the causes of fires, and to carry out targeted management and prevention.
 
+We used a bar chart to display and sort the top 10 fire causes in the United States. From the data we can see that Debris Burning is the most common cause of fires. Debris Burning refers to any spread of fire initially ignited to clear land or burn trash, garbage, crop residue or grass (excluding burning fires). Therefore, debris burning requires further control, and safety measures. This chart allows people to more clearly understand the causes of fires, and to carry out targeted management and prevention.
 
 ## Chart 2: Density Map of fires in the Mainland United States
 
@@ -84,6 +85,7 @@ source("../source/map_chart2.R")
 chart2 <- fire_but_better_shades
 chart2
 ```
+
 This density map of the United States depicts the number of fires that have happened in each state (in a random sample of 50,000 data observations) from 1992 to 2015. As we can see, Texas has suffered through the most wildfires in these past years, many of the Southern states and California are also more prone to wildfires than their northern companions. It could be because the Southern states typically have higher average temperatures, which make it easier for wildfires to start. This chart is important because it gives an insight on which states are more prone to wildfires, and also makes it all the more concerning when states like Washington suffer through intense wildfires: it makes us realize that global warming may be becoming more of a concern.
 
 ## Chart 3: Scatterplot Matrix of the Average Yearly Temperature in the United States, grouped by region
@@ -96,6 +98,14 @@ chart3
 
 This chart shows the average temperature for each region of the United States, divided into four location regions. From the Scatter Plot Matrix, it can be seen that the temperature in all regions of the United States is rising in a slow trend, which may be due to global warming. This chart can give users clearer and more intuitive information to have an understanding of the temperature in the United States, which is very important. Although we cannot directly feel global warming through our own feelings, we can analyze it through data.
 
+## Expected Implications
+
+All in all, the tables and graphs that we generated has helped us move a step forward towards solving our research questions. First, it proves that the reason of burning debris has been a major cause of the occurence of wildfires, which happens frequently in anywhere in the States due to urbanization of the cities. Second, we also proved that global warming might be a reason of the occurence of wildfires, as while the temperature increases gradually over the years, the occurrence of wildfires also increases gradually. Also, we found that Southern states are more prone to wildfires compared to the North. This might also be a potential reason that our group at in the future, whether there are more implications regarding the wildires in different parts of the United States.
+
+## Limitations
+
+The major limitation of the analysis so far is the relation of global warming with the data of the wildfires. Although we can prove that while temperature has been increasing over the decades, same as the occurence of wildfires, there is no direct way to relate wildfires to global warming, as there can be many reasons that lead to global warming. For example, the problem of deforestation and loss of vegetatation may not be caused by global warming but it can also impact the occurence of wildfires.
+
 ## References
 
 [1] California wildfires wiped out nearly 20 years of greenhouse gas emission reductions in 2020, alone <https://www.usatoday.com/story/news/nation/2022/10/18/california-wildfires-2020-greenhouse-gas-emissions/10524398002/>
@@ -103,5 +113,3 @@ This chart shows the average temperature for each region of the United States, d
 [2] Why are wildfires getting worse? These scientists explain <https://www.weforum.org/agenda/2021/08/wildfires-united-states-cause-science>
 
 [3] Are wildfires increasing or decreasing? <https://www.iqair.com/us/newsroom/wildfires-increasing-or-decreasing>
-
-
