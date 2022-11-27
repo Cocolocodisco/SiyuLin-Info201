@@ -80,7 +80,7 @@ ui <- fluidPage(
           imperative in making sure small fires do not grow into larger wildfires that could lower
           quality of life.")
     )
-
+ 
 )
 # Define server logic required to draw a histogram
 server <- function(input, output) {
