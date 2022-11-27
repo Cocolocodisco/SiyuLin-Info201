@@ -27,7 +27,7 @@ ui <- fluidPage(
           could implicate many things, such as a longer dry season (which can implicate less
           rainfall), and higher temperatures could also lead to malfunctions and casualties
           in places that are less well-equipped to deal with rising temperatures, which can
-          lead to fires."),
+          lead to fires."), 
         p("The second research question was:", em("When in the year are fires more prevalent and
           what are the most common causes of fire (natural vs manmade)?"), "When we analyzed
           the data set and created our table for our exploratory analysis (part 2), we can
@@ -78,7 +78,35 @@ ui <- fluidPage(
           and of course, wildfires. Because fires commonly start and grow faster in hotter and drier
           places with lots of vegetation, keeping the temperatures from rising as quickly is
           imperative in making sure small fires do not grow into larger wildfires that could lower
-          quality of life.")
+          quality of life."), 
+        br(), 
+        h2("Conclusion"), 
+        p("Wildfires have been a present problem dating back to the 1800s, and with the rising temperatures
+          due to global warming and climate change, as well as the many different ways to carelessly start a fire,
+          it has stayed a problem. Even though there have been efforts to prevent man made wildfires, like the iconic
+          Smokey Bear campaign that started in 1944, wildfires are still extremely prevalent in today's society, and
+          many Americans are affected by the resulting smoke. While some may argue that wildfires are encouraged to
+          balance the vegetation ecosystem, many frequent wildfires are detrimental to physical health and mental
+          health. Some examples of these include having to relocate due to one's house being compromised or having
+          to breathe in smoke particles for prolonged periods of time."), 
+        p("While lightning, a natural cause of wildfires (and therefore harder to prevent), is the fourth most
+          common cause for fire in the years 1992 through 2015 (in our data set), debris burning and arson (which
+          are both man made fires) top the charts for the most common causes of wildfires. This, combined with
+          rising temperatures due to global warming, increase the prevalence and prolong the existence of wildfires.
+          While there are steps to combat global warming, it will not be an instantaneous change and may take
+          several decades, especially with trying to change parts of the world that are reliant on older, more
+          pollutant products. Also, I believe that the correlation between wildfires and global warming is a little
+          misunderstood, in the sense that people may believe that more wildfires are happening because temperatures
+          are rising, in the same way natural disasters are more extreme due to climate change. But the truth of the
+          matter is that man made fires are started, and they become uncontainable due to the dry season and the low
+          rainfall. It is not necessarily the rising temperatures that start fires; it is because of rising
+          temperatures that wildfires stay fires for longer than they should."), 
+        p("We hope, in our creation of this summary, that was to wildfires and how they are first started
+          gains more attention. We hope that raising more awareness will help prevent future wildfires. We hope that
+          effective campaigns regarding safety regulations of controlled fires and things the general public can do
+          to make the earth a greener place will be carried out, and that news of major wildfires and record-breaking
+          air quality indexes become few and far between. After all, you are one of the many people who can prevent
+          wildfires.")
     )
  
 )
