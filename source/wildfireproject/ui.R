@@ -19,14 +19,14 @@ map_tab <- tabPanel(
 )
 
 report_tab <- tabPanel(
-    titlePanel("Findings, Discussion, Conclusions"),
+    titlePanel("Findings & More"),
         mainPanel( 
            includeMarkdown("findings.md")
         )
 )
 
 shinyUI(navbarPage(
-    "Wildfire Data & Summary",
+    "Wildfire Data",
     page_one,
     map_tab,
     report_tab
