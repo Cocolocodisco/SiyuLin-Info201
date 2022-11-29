@@ -11,9 +11,16 @@ library(shiny)
 #source("./findings.R")
 
 # Define UI for application that draws a histogram
-shinyUI(fluidPage(
-        titlePanel("Findings, Discussion, Conclusions"),
 
+page_one <- tabPanel(
+    titlePanel("Introduction")
+)
+
+page_two <- tabPanel(
+    titlePanel("Interactive Map")
+)
+page_three <- tabPanel(
+    titlePanel("Findings, Discussion, Conclusions"),
         mainPanel( 
             h2("Findings"),
             p("We had three research questions that we aimed to answer, the
@@ -120,5 +127,11 @@ shinyUI(fluidPage(
               indexes become few and far between. After all, you are one of the many people who can 
               prevent wildfires.")
         )
-    )
 )
+
+shinyUI(navbarPage(
+    "Wildfire Data & Summary",
+    page_one,
+    page_two,
+    page_three
+))

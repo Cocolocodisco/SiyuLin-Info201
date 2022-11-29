@@ -5,10 +5,10 @@ account: changcynthia
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 7752254
-bundleId: 6564895
+bundleId: 6565151
 url: https://changcynthia.shinyapps.io/wildfireproject/
-when: 1669677893.99448
-lastSyncTime: 1669677893.99448
+when: 1669683658.11238
+lastSyncTime: 1669683658.11238
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: findings.R
