@@ -9,18 +9,16 @@
 
 library(shiny)
 library(markdown)
-#source("./findings.R")
-
-# Define UI for application that draws a histogram
 
 page_one <- tabPanel(
     titlePanel("Introduction")
 )
 
-page_two <- tabPanel(
+map_tab <- tabPanel(
     titlePanel("Interactive Map")
 )
-page_three <- tabPanel(
+
+report_tab <- tabPanel(
     titlePanel("Findings, Discussion, Conclusions"),
         mainPanel( 
            includeMarkdown("findings.md")
@@ -30,6 +28,6 @@ page_three <- tabPanel(
 shinyUI(navbarPage(
     "Wildfire Data & Summary",
     page_one,
-    page_two,
-    page_three
+    map_tab,
+    report_tab
 ))
