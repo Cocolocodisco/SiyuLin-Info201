@@ -6,6 +6,7 @@ library(tidyverse)
 library(dplyr)
 library(ggplot2)
 library(usmap)
+library(shiny)
 
 fire_data <- read.csv("../data/FW_Veg_Rem_Combined.csv")
 
@@ -55,3 +56,5 @@ fire_but_better_shades <- fire_but_shades + scale_fill_continuous(name = "fire c
                           breaks = c(1000, 2000, 3000, 4000, 5000, 6000, 7000), na.value = "grey50") + 
                           labs(title = "Fire Density Map in Mainland United States from 1992 - 2015",
                                x = "", y = "")
+
+ggplotly(fire_but_better_shades)
