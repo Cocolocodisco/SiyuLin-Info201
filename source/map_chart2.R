@@ -24,7 +24,7 @@ location_density <- fire_data %>% select(state, disc_clean_date) %>%
 count_state <- location_density %>%
   count(state)
 
-max(count_state$n)
+#max(count_state$n)
 # this counts the number of fires that each state has had per year
 count_by_year <- location_density %>%
   group_by(year) %>%
@@ -57,4 +57,3 @@ fire_but_better_shades <- fire_but_shades + scale_fill_continuous(name = "fire c
                           labs(title = "Fire Density Map in Mainland United States from 1992 - 2015",
                                x = "", y = "")
 
-ggplotly(fire_but_better_shades)
