@@ -4,7 +4,10 @@ library(leaflet)
 library(tidyverse)
 
 page_one <- tabPanel(
-    titlePanel("Introduction")
+    titlePanel("Introduction"),
+        mainPanel(
+            includeMarkdown("intro.md")
+        )
 )
 
 fire_data <- read.csv("./fire_data_double.csv")

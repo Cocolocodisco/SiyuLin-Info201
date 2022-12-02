@@ -5,9 +5,9 @@ account: changcynthia
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 7752254
-bundleId: 6579836
+bundleId: 6579977
 url: https://changcynthia.shinyapps.io/wildfireproject/
-when: 1669945429.76038
-lastSyncTime: 1669945429.76038
+when: 1669949201.88799
+lastSyncTime: 1669949201.88799
 asMultiple: FALSE
 asStatic: FALSE
