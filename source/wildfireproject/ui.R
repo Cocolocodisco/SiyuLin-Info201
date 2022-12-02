@@ -15,7 +15,19 @@ page_one <- tabPanel(
 )
 
 map_tab <- tabPanel(
-    titlePanel("Interactive Map")
+    titlePanel("Interactive Map"),
+    sidebarLayout(
+        sidebarPanel(
+            selectInput("cause",
+                        "Initial Cause of Wildfire",
+                        c(unique(merging$stat_cause_descr))
+            )
+        ),
+        # Show a plot of the generated distribution
+        mainPanel(
+            leafletOutput("map")
+        )
+    )
 )
 
 report_tab <- tabPanel(
