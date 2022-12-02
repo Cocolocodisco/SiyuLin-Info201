@@ -20,7 +20,7 @@ map_tab <- tabPanel(
         sidebarPanel(
             selectInput("cause",
                         "Initial Cause of Wildfire",
-                        c(unique(merging$stat_cause_descr))
+                        c(unique(fire_data$stat_cause_descr))
             )
         ),
         # Show a plot of the generated distribution
