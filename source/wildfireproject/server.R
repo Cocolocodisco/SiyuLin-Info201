@@ -1,24 +1,9 @@
-#
-# This is the server logic of a Shiny web application. You can run the
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
-
-#source("../map_chart2.R")
-
-
-# testing map data shenanigans
 library(shiny)
 library(tidyverse)
 library(leaflet)
 library(maps)
 
-
-fire_data <- read.csv("../../data/FW_Veg_Rem_Combined.csv")
+fire_data <- read.csv("./fire_data_double.csv")
 
 # Define server logic required to draw a map
 shinyServer(function(input, output) {
