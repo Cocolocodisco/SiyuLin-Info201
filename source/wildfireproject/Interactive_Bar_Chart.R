@@ -1,12 +1,11 @@
-# tab_panel_chart1
+# Interactive_Bar_Chart
 library(shiny)
 library(lintr)
 library("tidyverse", warn.conflicts = FALSE)
 library("plotly", warn.conflicts = FALSE)
 library("leaflet", warn.conflicts = FALSE)
 library("ggplot2", warn.conflicts = FALSE)
-lint("tab_panel_chart1.R")
-wealth_race <- read_csv("https://raw.githubusercontent.com/info-201a-wi22/final-project-starter-AZAHAZA/main/data/dfa-race.csv")
+fire_data <- read_csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/wildfireproject/fire_data_double.csv")
 
 total_size <- fire_data %>%
   select(fire_size) %>%
@@ -23,15 +22,13 @@ bar_chart_main_content <- mainPanel(
 x_input <- selectInput(
   "x_var",
   label = "X Variable",
-  choices = select_values,
-  selected = fire_data$stat_cause_descr
+  choices = fire_data$stat_cause_descr
 )
 
 y_input <- selectInput(
   "y_var",
   label = "Y Variable",
-  choices = select_values,
-  selected = fire_data$X
+  choices = fire_data$`Unnamed: 0`
 )
 
 color_input <- selectInput(
@@ -40,8 +37,8 @@ color_input <- selectInput(
   choices = list("Red" = "red", "cyan", "Blue" = "blue", "Violet" = "purple3")
 )
 
-tab_panel_chart1 <- tabPanel(
-  "Chart 1",
+Interactive_Bar_Chart <- tabPanel(
+  "Bar Chart",
   tags$div(class = "chart_type", "Bar Chart"),
   p("This is a bar chart that illustrates the number of fires caused by different causes in the United States."),
   sidebarLayout(
