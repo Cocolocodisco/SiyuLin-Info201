@@ -3,7 +3,7 @@ library(tidyverse)
 library(leaflet)
 library(maps)
 
-fire_data <- read.csv("./fire_data_double.csv")
+fire_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/wildfireproject/fire_data_double.csv")
 
 # Define server logic required to draw a map
 shinyServer(function(input, output) {
