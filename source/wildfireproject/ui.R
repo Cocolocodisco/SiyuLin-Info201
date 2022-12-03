@@ -23,7 +23,12 @@ map_tab <- tabPanel(
         ),
         # Show a plot of the generated distribution
         mainPanel(
-            leafletOutput("map")
+            leafletOutput("map"), 
+            p("This graph shows different wildfires that have happened between the
+              years 1992 and 2015 in the United States, including Alaska and Hawaii.
+              The dropdown menu on the left lets the user choose an initial cause of
+              the wildfire, and the map will display all the wildfires that started from
+              that initial cause on the map.")
         )
     )
 )
