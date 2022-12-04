@@ -5,8 +5,12 @@ library("tidyverse", warn.conflicts = FALSE)
 library("plotly", warn.conflicts = FALSE)
 library("leaflet", warn.conflicts = FALSE)
 library("ggplot2", warn.conflicts = FALSE)
+library("dplyr", warn.conflicts = FALSE)
+
+#Read the dataset
 fire_data <- read_csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/wildfireproject/fire_data_double.csv")
 
+#Sums up the fire sizes
 total_size <- fire_data %>%
   select(fire_size) %>%
   summarize(
@@ -14,6 +18,7 @@ total_size <- fire_data %>%
   ) %>%
   pull(fire_size)
 
+#Sums up the fire magnitudes
 total_magnitude <- fire_data %>%
   select(fire_mag) %>%
   summarize(
@@ -21,45 +26,56 @@ total_magnitude <- fire_data %>%
   ) %>%
   pull(fire_mag)
 
+
+
+#Arrange the variables
 proportion <- fire_data %>%
   select(stat_cause_descr, fire_mag, fire_size) %>%
-  group_by(stat_cause_descr) %>%
+  rename(cause = stat_cause_descr) %>%
+  group_by(cause) %>%
   summarize(
-    fire_size = sum(fire_size, na.rm = TRUE),
-    fire_mag = sum(fire_mag, na.rm = TRUE)) %>%
-  mutate(
-    proportion_size = fire_size / total_size,
-    proportion_magnitude = fire_mag / total_magnitude
-  )
+    size = sum(fire_size, na.rm = TRUE),
+    magnitude = sum(fire_mag, na.rm = TRUE),
+    
+#   mutate(
+#     proportion_size = fire_size / total_size,
+#      proportion_magnitude = fire_mag / total_magnitude
+    ) 
 
+#Puts all the variables into one 
 select_values <- colnames(proportion)
 
+#Plot the bar chart
 bar_chart_main_content <- mainPanel(
   plotlyOutput("barchart")
 )
 
+#Insert variables into the X-axis of bar chart
 x_input <- selectInput(
   "x_var",
   label = "X Variable",
   choices = select_values,
-  selected= fire_data$stat_cause_descr
+  selected = "cause"
 )
 
+#Insert variables into the Y-axis of bar chart
 y_input <- selectInput(
   "y_var",
   label = "Y Variable",
   choices = select_values,
-  selected= fire_data$fire_size
+  selected = "size"
 )
 
+#Add function to change color of the bar chart
 color_input <- selectInput(
   "color",
   label = "Color",
   choices = list("Red" = "red", "cyan", "Blue" = "blue", "Violet" = "purple3")
 )
 
+#Render the Bar Chart
 Interactive_Bar_Chart <- tabPanel(
-  "Bar Chart",
+  titlePanel("Bar Chart"),
   tags$div(class = "chart_type", "Bar Chart"),
   p("This is a bar chart that illustrates the number of fires caused by different causes in the United States."),
   sidebarLayout(
@@ -76,5 +92,6 @@ Interactive_Bar_Chart <- tabPanel(
       it is appropriate to employ the chart in our analysis.
       We also include the interactive select input to allow
       the user to choose which variable to display."
-  )
+  ),
 )
+

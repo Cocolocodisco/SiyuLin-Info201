@@ -13,14 +13,11 @@ page_one <- tabPanel(
 
 fire_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/wildfireproject/fire_data_double.csv")
 
-#barchart_tab <- tabPanel(
- # titlePanel("Bar Chart"),
-  #mainPanel(plotlyOutput("Interactive_Bar_Chart.R"), 
-   # p("This graph shows different wildfires that have different causes")
-#  )
-#)
 
-
+# page_bar <- tabPanel(
+#   titlePanel("Bar Chart"),
+# 
+# ) 
 map_tab <- tabPanel(
     titlePanel("Interactive Map"),
     sidebarLayout(
