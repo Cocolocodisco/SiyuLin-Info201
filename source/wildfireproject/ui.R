@@ -12,7 +12,7 @@ page_one <- tabPanel(
 )
 
 fire_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/wildfireproject/fire_data_double.csv")
-
+unitedstate <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/data/united_states.csv")
 
 # page_bar <- tabPanel(
 #   titlePanel("Bar Chart"),
@@ -38,6 +38,33 @@ map_tab <- tabPanel(
         )
     )
 )
+# user can select State, Year, use data from united_states.csv
+scatterplot_tab <- tabPanel(
+  titlePanel("Interactive Scatterplot"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("year_slider",
+                  "Year",
+                  min = 1995,
+                  max = 2020,
+                  value = c(1995, 2020),
+                  step = 1
+      ),
+      selectInput("state",
+                  "State",
+                  c(unique(unitedstate$State))
+      )
+    ),
+    # Show a plot of the generated distribution
+    mainPanel(
+      plotlyOutput("scatterplot"), 
+      p("This graph shows the average temperature of a state in a year. The user
+              can select a state and a range of years to see the average temperature of
+              that state in those years, and the scatterplot will display the
+              average temperature of the state in the selected years in orange.")
+    )
+  )
+)
 
 report_tab <- tabPanel(
     titlePanel("Findings & More"),
@@ -51,5 +78,6 @@ shinyUI(navbarPage(
     page_one,
     Interactive_Bar_Chart,
     map_tab,
+    scatterplot_tab,
     report_tab
 ))
