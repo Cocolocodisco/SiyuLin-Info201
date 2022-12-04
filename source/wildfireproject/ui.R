@@ -10,7 +10,7 @@ page_one <- tabPanel(
     titlePanel("Introduction"),
         mainPanel(
             includeMarkdown("intro.md"), 
-            img(src = "fire.jpg", align = "left")
+            imageOutput("image")
         )
 )
 

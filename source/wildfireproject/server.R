@@ -10,6 +10,10 @@ unitedstate <- read.csv("./united_states_double.csv")
 
 shinyServer(function(input, output) {
   
+  output$image <- renderImage({
+    list(src = "./www/fire.jpg")
+  }, deleteFile = F)
+  
   output$barchart <- renderPlotly({
     title <- paste0("Fire Distribution by ",
                     input$x_var, " and ", input$y_var)
