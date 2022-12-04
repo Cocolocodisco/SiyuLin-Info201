@@ -4,10 +4,12 @@ library(leaflet)
 library(maps)
 library(plotly)
 
-fire_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/wildfireproject/fire_data_double.csv")
-unitedstate <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/data/united_states.csv")
-# Define server logic required to draw a map
+fire_data <- read.csv("./fire_data_double.csv")
+unitedstate <- read.csv("./united_states_double.csv")
+
+
 shinyServer(function(input, output) {
+  
   output$barchart <- renderPlotly({
     title <- paste0("Fire Distribution by ",
                     input$x_var, " and ", input$y_var)
@@ -21,6 +23,7 @@ shinyServer(function(input, output) {
     intergraph
   })
   
+  # Define server logic required to draw a map
   output$map <- renderLeaflet({
     changing_data <- fire_data  %>%
       filter(stat_cause_descr == input$cause) %>%

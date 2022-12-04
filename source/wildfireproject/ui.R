@@ -2,17 +2,20 @@ library(shiny)
 library(markdown)
 library(leaflet)
 library(tidyverse)
+library(shinythemes)
+
 source("Interactive_Bar_Chart.R")
 
 page_one <- tabPanel(
     titlePanel("Introduction"),
         mainPanel(
-            includeMarkdown("intro.md")
+            includeMarkdown("intro.md"), 
+            img(src = "fire.jpg", align = "left")
         )
 )
 
-fire_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/wildfireproject/fire_data_double.csv")
-unitedstate <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/data/united_states.csv")
+fire_data <- read.csv("./fire_data_double.csv")
+unitedstate <- read.csv("./united_states_double.csv")
 
 # page_bar <- tabPanel(
 #   titlePanel("Bar Chart"),
@@ -38,6 +41,7 @@ map_tab <- tabPanel(
         )
     )
 )
+
 # user can select State, Year, use data from united_states.csv
 scatterplot_tab <- tabPanel(
   titlePanel("Interactive Scatterplot"),
@@ -67,13 +71,17 @@ scatterplot_tab <- tabPanel(
 )
 
 report_tab <- tabPanel(
-    titlePanel("Findings & More"),
-        mainPanel( 
-           includeMarkdown("findings.md")
+    titlePanel("Conclusion"), 
+    mainPanel(
+        tabsetPanel(
+        tabPanel("Takeaways", includeMarkdown("takeaways.md")),
+        tabPanel("Findings & More", includeMarkdown("findings.md"))
         )
+    )
 )
 
 shinyUI(navbarPage(
+    theme = shinytheme("united"),
     "Wildfire Data",
     page_one,
     Interactive_Bar_Chart,
