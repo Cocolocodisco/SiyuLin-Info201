@@ -33,4 +33,20 @@ shinyServer(function(input, output) {
                        lat = changing_data$latitude, radius = 0.01, color = "red")
   })
   
+  # define a scatterplot matrix to render in the UI
+  output$scatterplot <- renderPlotly({
+    changing_data <- unitedstate %>%
+      filter(State == input$state) %>%
+      filter(Year >= input$year_slider[1] & Year <= input$year_slider[2]) %>%
+      group_by(Year) %>%
+      summarise(AvgTemperature = mean(AvgTemperature))
+    title <- paste0("Average Temperature of ", input$state, " from ", input$year_slider[1], " to ", input$year_slider[2])
+    chart <- ggplot(changing_data) +
+      geom_point(mapping = aes(x = Year, y = AvgTemperature), color = "orange") +
+      labs(x = "Year", y = "Average Temperature", title = title)
+    chart
+    intergraph <-  ggplotly(chart)
+    intergraph
+  })
+  
 })
