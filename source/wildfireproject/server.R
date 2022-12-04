@@ -34,7 +34,7 @@ shinyServer(function(input, output) {
                        lat = changing_data$latitude, radius = 0.01, color = "red")
   })
   
-  # define a scatterplot matrix to render in the UI
+  # define a scatterplot to render in the UI
   output$scatterplot <- renderPlotly({
     changing_data <- unitedstate %>%
       filter(State == input$state) %>%
