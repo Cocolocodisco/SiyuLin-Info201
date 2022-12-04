@@ -14,6 +14,25 @@ total_size <- fire_data %>%
   ) %>%
   pull(fire_size)
 
+total_magnitude <- fire_data %>%
+  select(fire_mag) %>%
+  summarize(
+    fire_mag = sum(fire_mag, na.rm = TRUE)
+  ) %>%
+  pull(fire_mag)
+
+proportion <- fire_data %>%
+  select(stat_cause_descr, fire_mag, fire_size) %>%
+  group_by(stat_cause_descr) %>%
+  summarize(
+    fire_size = sum(fire_size, na.rm = TRUE),
+    fire_mag = sum(fire_mag, na.rm = TRUE)) %>%
+  mutate(
+    proportion_size = fire_size / total_size,
+    proportion_magnitude = fire_mag / total_magnitude
+  )
+
+select_values <- colnames(proportion)
 
 bar_chart_main_content <- mainPanel(
   plotlyOutput("barchart")
@@ -22,13 +41,15 @@ bar_chart_main_content <- mainPanel(
 x_input <- selectInput(
   "x_var",
   label = "X Variable",
-  choices = fire_data$stat_cause_descr
+  choices = select_values,
+  selected= fire_data$stat_cause_descr
 )
 
 y_input <- selectInput(
   "y_var",
   label = "Y Variable",
-  choices = fire_data$`Unnamed: 0`
+  choices = select_values,
+  selected= fire_data$fire_size
 )
 
 color_input <- selectInput(
@@ -54,7 +75,6 @@ Interactive_Bar_Chart <- tabPanel(
       distribution of categorical data and numerical data,
       it is appropriate to employ the chart in our analysis.
       We also include the interactive select input to allow
-      the user to choose which variable to display.
-      According to the chart, "
+      the user to choose which variable to display."
   )
 )

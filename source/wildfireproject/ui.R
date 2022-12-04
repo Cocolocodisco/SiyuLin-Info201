@@ -2,7 +2,7 @@ library(shiny)
 library(markdown)
 library(leaflet)
 library(tidyverse)
-source(".Interactive_Bar_Chart.R")
+source("Interactive_Bar_Chart.R")
 
 page_one <- tabPanel(
     titlePanel("Introduction"),
@@ -13,13 +13,12 @@ page_one <- tabPanel(
 
 fire_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/wildfireproject/fire_data_double.csv")
 
-barchart_tab <- tabPanel(
-  titlePanel("Bar Chart"),
-  mainPanel(
-    leafletOutput("Interative_Bar_Chart"), 
-    p("This graph shows different wildfires that have different causes")
-  )
-)
+#barchart_tab <- tabPanel(
+ # titlePanel("Bar Chart"),
+  #mainPanel(plotlyOutput("Interactive_Bar_Chart.R"), 
+   # p("This graph shows different wildfires that have different causes")
+#  )
+#)
 
 
 map_tab <- tabPanel(
@@ -53,7 +52,7 @@ report_tab <- tabPanel(
 shinyUI(navbarPage(
     "Wildfire Data",
     page_one,
-    barchart_tab,
+    Interactive_Bar_Chart,
     map_tab,
     report_tab
 ))
