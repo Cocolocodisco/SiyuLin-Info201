@@ -9,10 +9,16 @@ source("Interactive_Bar_Chart.R")
 
 page_one <- tabPanel(
     titlePanel("Introduction"),
+    sidebarLayout(
+        sidebarPanel(
+          includeMarkdown("./about.md")
+        ),
         mainPanel(
             includeMarkdown("intro.md"), 
-            imageOutput("image")
+            imageOutput("image"), 
+            p("Picture Credits: World Health Organization")
         )
+    )
 )
 
 fire_data <- read.csv("./fire_data_double.csv")

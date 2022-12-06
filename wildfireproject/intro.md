@@ -1,3 +1,5 @@
+# Wildfires in the US: Is it getting worse?!
+
 ## Abstract
 This project aims to, broadly speaking, explore the causes of wildfires in the United States. Over the recent years, there have been an increase in wildfires, and some of this may be due to a longer dry season and a shorter rainy season. Wildfires affect millions of Americans' lives each year, and so to
 address this concern, we hope to raise awareness regarding the causes of wildfires in the United States. 
