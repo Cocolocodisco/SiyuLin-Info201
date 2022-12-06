@@ -8,7 +8,7 @@ library("ggplot2", warn.conflicts = FALSE)
 library("dplyr", warn.conflicts = FALSE)
 
 #Read the dataset
-fire_data <- read_csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-af/main/source/wildfireproject/fire_data_double.csv")
+fire_data <- read.csv("./fire_data_double.csv")
 
 #Sums up the fire sizes
 total_size <- fire_data %>%

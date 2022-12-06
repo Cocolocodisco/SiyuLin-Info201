@@ -3,6 +3,7 @@ library(markdown)
 library(leaflet)
 library(tidyverse)
 library(shinythemes)
+library(plotly)
 
 source("Interactive_Bar_Chart.R")
 
@@ -81,7 +82,7 @@ report_tab <- tabPanel(
 )
 
 shinyUI(navbarPage(
-    #theme = shinytheme("united"),
+    theme = shinytheme("united"),
     "Wildfire Data",
     page_one,
     Interactive_Bar_Chart,
