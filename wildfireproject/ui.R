@@ -81,7 +81,7 @@ report_tab <- tabPanel(
 )
 
 shinyUI(navbarPage(
-    theme = shinytheme("united"),
+    #theme = shinytheme("united"),
     "Wildfire Data",
     page_one,
     Interactive_Bar_Chart,
