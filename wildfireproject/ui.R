@@ -14,8 +14,8 @@ page_one <- tabPanel(
           includeMarkdown("./about.md")
         ),
         mainPanel(
-            includeMarkdown("intro.md"), 
-            imageOutput("image"), 
+            includeMarkdown("intro.md"),
+            imageOutput("image"),
             p("Picture Credits: World Health Organization")
         )
     )
@@ -24,34 +24,48 @@ page_one <- tabPanel(
 fire_data <- read.csv("./fire_data_double.csv")
 unitedstate <- read.csv("./united_states_double.csv")
 
-# page_bar <- tabPanel(
-#   titlePanel("Bar Chart"),
-# 
-# ) 
-map_tab <- tabPanel(
-    titlePanel("Interactive Map"),
-    sidebarLayout(
-        sidebarPanel(
-            selectInput("cause",
-                        "Initial Cause of Wildfire",
-                        c(unique(fire_data$stat_cause_descr))
-            )
-        ),
-        # Show a plot of the generated distribution
-        mainPanel(
-            leafletOutput("map"), 
-            p("This graph shows different wildfires that have happened between the
-              years 1992 and 2015 in the United States, including Alaska and Hawaii.
-              The dropdown menu on the left lets the user choose an initial cause of
-              the wildfire, and the map will display all the wildfires that started from
-              that initial cause on the map.")
-        )
+bar_tab <- tabPanel(
+  titlePanel("Top Causes of Fire"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("year",
+                  "Year",
+                  c(sort.int(unique(fire_data$disc_pre_year)))
+      )
+    ),
+    mainPanel(
+      plotlyOutput("bar"),
+      p("This bar chart shows the top causes of wildfire ranked by the most
+          common cause. Users can pick a year from the dropdown menu on the left
+          to see some of the most common initial causes of wildfire in that year.")
     )
+  )
+)
+
+map_tab <- tabPanel(
+  titlePanel("Fires Map"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("cause",
+                  "Initial Cause of Wildfire",
+                  c(unique(fire_data$stat_cause_descr))
+      )
+    ),
+    # Show a plot of the generated distribution
+    mainPanel(
+      leafletOutput("map"),
+      p("This graph shows different wildfires that have happened between the
+        years 1992 and 2015 in the United States, including Alaska and Hawaii.
+        The dropdown menu on the left lets the user choose an initial cause of
+        the wildfire, and the map will display all the wildfires that started from
+        that initial cause on the map.")
+    )
+  )
 )
 
 # user can select State, Year, use data from united_states.csv
 scatterplot_tab <- tabPanel(
-  titlePanel("Interactive Scatterplot Matrix"),
+  titlePanel("Temperature Comparison"),
   sidebarLayout(
     sidebarPanel(
       selectInput("state",
@@ -75,18 +89,18 @@ scatterplot_tab <- tabPanel(
     ),
     # Show a plot of the generated distribution
     mainPanel(
-      plotlyOutput("scatterplot"), 
+      plotlyOutput("scatterplot"),
       p("This graph shows the average temperature of three states in the United States
-              from 1992 to 2015. The dropdown menu on the left lets the user choose three states
-              and the color of the line. The slider on the left lets the user choose the year range
-              of the data. The graph will display the average temperature of the three states in the
-              chosen year range.")
+        from 1992 to 2015. The dropdown menu on the left lets the user choose three states
+        and the color of the line. The slider on the left lets the user choose the year range
+        of the data. The graph will display the average temperature of the three states in the
+        chosen year range.")
     )
   )
 )
 
 report_tab <- tabPanel(
-    titlePanel("Conclusion"), 
+    titlePanel("Conclusion"),
     mainPanel(
         tabsetPanel(
         tabPanel("Takeaways", includeMarkdown("takeaways.md")),
@@ -99,7 +113,7 @@ shinyUI(navbarPage(
     theme = shinytheme("united"),
     "Wildfire Data",
     page_one,
-    Interactive_Bar_Chart,
+    bar_tab,
     map_tab,
     scatterplot_tab,
     report_tab
