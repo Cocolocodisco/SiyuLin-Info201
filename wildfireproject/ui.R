@@ -54,17 +54,25 @@ scatterplot_tab <- tabPanel(
   titlePanel("Interactive Scatterplot"),
   sidebarLayout(
     sidebarPanel(
-      sliderInput("year_slider",
-                  "Year",
-                  min = 1995,
-                  max = 2020,
-                  value = c(1995, 2020),
-                  step = 1
-      ),
-      selectInput("state",
-                  "State",
-                  c(unique(unitedstate$State))
-      )
+       selectInput("state",
+                   "State 1",
+                   c(unique(unitedstate$State))
+       ),
+       selectInput("state2",
+                   "State 2",
+                   c(unique(unitedstate$State))
+       ),
+       selectInput("state3",
+                   "State 3",
+                   c(unique(unitedstate$State))
+       ),
+       sliderInput("year_slider",
+                   "Year",
+                   min = 1992,
+                   max = 2015,
+                   value = c(1992, 2020),
+                   step = 1
+       )
     ),
     # Show a plot of the generated distribution
     mainPanel(
