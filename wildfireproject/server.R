@@ -42,24 +42,39 @@ shinyServer(function(input, output) {
   })
   
   # define a scatterplot to render in the UI
-output$scatterplot <- renderPlotly({
-  data <- unitedstate  %>% 
-    filter(State == input$state | State == input$state2 | State == input$state3) %>%
-    filter(Year >= input$year_slider[1] & Year <= input$year_slider[2]) %>%
-    #get the mean of AvgTemperature of each year
-    group_by(Year) %>% 
-    summarise(AvgTemperature = mean(AvgTemperature))
-
-  #plot the scatterplot matrix with line of best fit
-  chart <- ggplot(data) +
-    geom_point(mapping = aes_string(x = "Year", y = "AvgTemperature"),
-               color = input$color
-    ) +
-    geom_smooth(method = "lm", se = FALSE) +
-    labs(x = "Year", y = "AvgTemperature", title = "AvgTemperature of State")
-  chart
-  intergraph <-  ggplotly(chart)
-  intergraph
-})
+  output$ scatterplot <- renderPlotly({
+    data_for_state1 <- unitedstate  %>% 
+      filter(State == input$state) %>% 
+      filter(Year >= input$year_slider[1] & Year <= input$year_slider[2]) %>% 
+      group_by(Year) %>% 
+      summarise(AvgTemperature = mean(AvgTemperature))
+    
+    data_for_state2 <- unitedstate  %>%
+      filter(State == input$state2) %>%
+      filter(Year >= input$year_slider[1] & Year <= input$year_slider[2]) %>%
+      group_by(Year) %>%
+      summarise(AvgTemperature = mean(AvgTemperature))
+    
+    data_for_state3 <- unitedstate  %>%
+      filter(State == input$state3) %>%
+      filter(Year >= input$year_slider[1] & Year <= input$year_slider[2]) %>%
+      group_by(Year) %>%
+      summarise(AvgTemperature = mean(AvgTemperature))
+    
+    chart <- ggplot() +
+      geom_point(data = data_for_state1, mapping = aes_string(x = "Year", y = "AvgTemperature"),
+                 color = "red"
+      ) +
+      geom_point(data = data_for_state2, mapping = aes_string(x = "Year", y = "AvgTemperature"),
+                 color = "blue"
+      ) +
+      geom_point(data = data_for_state3, mapping = aes_string(x = "Year", y = "AvgTemperature"),
+                 color = "green"
+      ) +
+      labs(x = "Year", y = "AvgTemperature", title = "AvgTemperature of State") 
+    chart
+    intergraph <-  ggplotly(chart)
+    intergraph
+  })
   
 })
