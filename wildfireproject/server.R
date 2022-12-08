@@ -10,8 +10,6 @@ unitedstate <- read.csv("./united_states_double.csv")
 us_remove_99 <- unitedstate %>%
   filter(AvgTemperature != -99)
 
-
-
 shinyServer(function(input, output) {
 
   output$image <- renderImage({

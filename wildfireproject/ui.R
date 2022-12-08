@@ -5,9 +5,10 @@ library(tidyverse)
 library(shinythemes)
 library(plotly)
 
-source("Interactive_Bar_Chart.R")
+fire_data <- read.csv("./fire_data_double.csv")
+unitedstate <- read.csv("./united_states_double.csv")
 
-page_one <- tabPanel(
+intro_tab <- tabPanel(
     titlePanel("Introduction"),
     sidebarLayout(
         sidebarPanel(
@@ -20,9 +21,6 @@ page_one <- tabPanel(
         )
     )
 )
-
-fire_data <- read.csv("./fire_data_double.csv")
-unitedstate <- read.csv("./united_states_double.csv")
 
 bar_tab <- tabPanel(
   titlePanel("Top Causes of Fire"),
@@ -112,7 +110,7 @@ report_tab <- tabPanel(
 shinyUI(navbarPage(
     theme = shinytheme("united"),
     "Wildfire Data",
-    page_one,
+    intro_tab,
     bar_tab,
     map_tab,
     scatterplot_tab,
