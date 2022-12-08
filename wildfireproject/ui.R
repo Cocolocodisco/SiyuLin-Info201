@@ -51,36 +51,36 @@ map_tab <- tabPanel(
 
 # user can select State, Year, use data from united_states.csv
 scatterplot_tab <- tabPanel(
-  titlePanel("Interactive Scatterplot"),
+  titlePanel("Interactive Scatterplot Matrix"),
   sidebarLayout(
     sidebarPanel(
-       selectInput("state",
-                   "State 1",
-                   c(unique(unitedstate$State))
-       ),
-       selectInput("state2",
-                   "State 2",
-                   c(unique(unitedstate$State))
-       ),
-       selectInput("state3",
-                   "State 3",
-                   c(unique(unitedstate$State))
-       ),
-       sliderInput("year_slider",
-                   "Year",
-                   min = 1992,
-                   max = 2015,
-                   value = c(1992, 2020),
-                   step = 1
-       )
+      selectInput("state",
+                  "State 1 (Red)",
+                  c(unique(unitedstate$State))
+      ),
+      selectInput("state2",
+                  "State 2 (Blue)",
+                  c(unique(unitedstate$State))
+      ),
+      selectInput("state3",
+                  "State 3 (Green)",
+                  c(unique(unitedstate$State))
+      ),
+      sliderInput("year_slider",
+                  "Year Range",
+                  min = 1995,
+                  max = 2020,
+                  value = c(1995, 2020)
+      )
     ),
     # Show a plot of the generated distribution
     mainPanel(
       plotlyOutput("scatterplot"), 
-      p("This graph shows the average temperature of a state in a year. The user
-              can select a state and a range of years to see the average temperature of
-              that state in those years, and the scatterplot will display the
-              average temperature of the state in the selected years in orange.")
+      p("This graph shows the average temperature of three states in the United States
+              from 1992 to 2015. The dropdown menu on the left lets the user choose three states
+              and the color of the line. The slider on the left lets the user choose the year range
+              of the data. The graph will display the average temperature of the three states in the
+              chosen year range.")
     )
   )
 )
