@@ -34,8 +34,13 @@ bar_tab <- tabPanel(
     mainPanel(
       plotlyOutput("bar"),
       p("This bar chart shows the top causes of wildfire ranked by the most
-          common cause. Users can pick a year from the dropdown menu on the left
-          to see some of the most common initial causes of wildfire in that year.")
+        common cause. Users can pick a year from the dropdown menu on the left
+        to see some of the most common initial causes of wildfire in that year.
+        As we can see from the interactions, as the years progress, the number
+        of fires increases dramatically. In the year 1991, there were only 24 cases
+        of debris burning in the United states, but in 2015, we can see that there
+        were 570 wildfires started due to debris burning in 2015 (and this count
+        does not include other wildfires started from different causes).")
     )
   )
 )
